@@ -1,1 +1,304 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thekings Media</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css " rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code :wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary-black: #000000;
+      --primary-white: #ffffff;
+      --electric-blue: #00ffff;
+      --dark-gray: #1a1a1a;
+      --light-gray: #f5f5f5;
+    }
+    body {
+      font-family: 'Fira Code', monospace;
+      background: var(--primary-black);
+      color: var(--primary-white);
+      line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .light-mode {
+      --primary-black: #ffffff;
+      --primary-white: #000000;
+      --dark-gray: #f5f5f5;
+      --light-gray: #1a1a1a;
+    }
+    .hero {
+      background: linear-gradient(45deg, var(--primary-black), var(--dark-gray));
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      background: linear-gradient(45deg, var(--primary-white), var(--electric-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .btn {
+      padding: 1rem 2rem;
+      border: 2px solid var(--electric-blue);
+      background: transparent;
+      color: var(--electric-blue);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: var(--electric-blue);
+      color: var(--primary-black);
+    }
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--electric-blue);
+      margin-bottom: 2rem;
+    }
+    .job-board, .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .job-card, .profile-card {
+      background: var(--dark-gray);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    .job-card h3, .profile-card h3 {
+      color: var(--electric-blue);
+    }
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--electric-blue);
+      background: transparent;
+      color: var(--electric-blue);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .filter-btn.active {
+      background: var(--electric-blue);
+      color: var(--primary-black);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--dark-gray);
+      color: var(--light-gray);
+    }
+    .theme-toggle {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Theme Toggle -->
+  <div class="theme-toggle">
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Thekings Media</h1>
+    <p>Empowering Web3 Developers & Innovators</p>
+    <div class="cta-buttons">
+      <a href="#jobs" class="btn">Browse Jobs</a>
+      <a href="#services" class="btn">Hire Talent</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <h2 class="section-title">About Us</h2>
+    <p>We bridge the gap between blockchain innovation and real-world applications. Our platform connects developers, enterprises, and communities through cutting-edge tools and resources.</p>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <h2 class="section-title">Services</h2>
+    <div>
+      <h3>For Developers</h3>
+      <ul>
+        <li>Curated Web3 job listings</li>
+        <li>Tutorial library (Solidity, Rust, IPFS)</li>
+        <li>Free developer tools & SDKs</li>
+        <li>Global hackathons & grants</li>
+      </ul>
+      <h3>For Enterprises</h3>
+      <ul>
+        <li>Talent recruitment & vetting</li>
+        <li>Blockchain strategy consulting</li>
+        <li>dApp development & auditing</li>
+        <li>Community-building campaigns</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Job Board -->
+  <section class="section" id="jobs">
+    <h2 class="section-title">Web3 Job Board</h2>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All Jobs</button>
+      <button class="filter-btn" data-filter="solidity">Solidity Dev</button>
+      <button class="filter-btn" data-filter="rust">Rust Blockchain</button>
+      <button class="filter-btn" data-filter="nft">NFT Projects</button>
+      <button class="filter-btn" data-filter="defi">DeFi Roles</button>
+    </div>
+    <div class="job-board" id="jobBoard">
+      <!-- Jobs will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <!-- Developer Profiles -->
+  <section class="section" id="profiles">
+    <h2 class="section-title">Developer Profiles</h2>
+    <input type="text" id="searchInput" placeholder="Search by skill or name..." class="search-bar">
+    <div class="profile-grid" id="profileGrid">
+      <!-- Profiles will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section" id="newsletter">
+    <h2 class="section-title">Subscribe to Our Newsletter</h2>
+    <form id="newsletterForm">
+      <input type="email" id="emailInput" placeholder="Enter your email" required>
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Thekings Media. All rights reserved.</p>
+    <p><a href="#" style="color: var(--electric-blue);">Terms</a> | <a href="#" style="color: var(--electric-blue);">Privacy</a></p>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js "></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js "></script>
+
+  <!-- Firebase Config -->
+  <script>
+    // Initialize Firebase with your config
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+
+  <!-- Dynamic Job Listings -->
+  <script>
+    function loadJobs() {
+      const jobBoard = document.getElementById('jobBoard');
+      db.collection("jobs").get().then((querySnapshot) => {
+        jobBoard.innerHTML = '';
+        querySnapshot.forEach((doc) => {
+          const job = doc.data();
+          const jobCard = `
+            <div class="job-card" data-category="${job.type}">
+              <h3>${job.title}</h3>
+              <p>${job.location} | ${job.salary}</p>
+              <a href="${job.link}" class="btn">Apply Now</a>
+            </div>
+          `;
+          jobBoard.innerHTML += jobCard;
+        });
+      });
+    }
+    window.onload = loadJobs;
+  </script>
+
+  <!-- Developer Profiles -->
+  <script>
+    function loadProfiles() {
+      const profileGrid = document.getElementById('profileGrid');
+      db.collection("developers").get().then((querySnapshot) => {
+        profileGrid.innerHTML = '';
+        querySnapshot.forEach((doc) => {
+          const dev = doc.data();
+          const profileCard = `
+            <div class="profile-card">
+              <h3>${dev.name}</h3>
+              <p><strong>Skills:</strong> ${dev.skills.join(', ')}</p>
+              <p>${dev.bio}</p>
+              <a href="${dev.portfolioLink}" target="_blank" class="btn">View Portfolio</a>
+            </div>
+          `;
+          profileGrid.innerHTML += profileCard;
+        });
+      });
+    }
+    window.onload = () => {
+      loadJobs();
+      loadProfiles();
+    };
+
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      document.querySelectorAll('.profile-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(term) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+  <!-- Newsletter -->
+  <script>
+    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('emailInput').value;
+      db.collection("subscribers").add({ email }).then(() => {
+        alert('Thank you for subscribing!');
+        document.getElementById('newsletterForm').reset();
+      });
+    });
+  </script>
+
+  <!-- Dark Mode Toggle -->
+  <script>
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      toggleBtn.textContent = document.body.classList.contains('light-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+
+    // Load saved theme
+    window.onload = () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        toggleBtn.textContent = '☀️ Light Mode';
+      }
+    };
+  </script>
+</body>
+</html>
