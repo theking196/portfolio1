@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheKing - Web Developer & Project Manager</title>
+    <link href="assets/css/fontawesome/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="Theking's Media portfolio. Web development, memecoin, Web3 ">
+    <meta name="keywords" content="Web development, memecoin, Laravel, web3, HTML, CSS, Theking, Theking's, Theking's Media, Theking Media, Javascript">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/theking/transparent/favicon/icons/favicon_io/favicon.ico">
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/theking/transparent/favicon/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/theking/transparent/favicon/icons/favicon_io/favicon-16x16.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/theking/transparent/favicon/icons/favicon_io/apple-touch-icon.png">
+
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/theking/transparent/favicon/icons/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/theking/transparent/favicon/icons/favicon_io/android-chrome-512x512.png">
+
+    <!-- Web Manifest -->
+    <link rel="manifest" href="assets/theking/transparent/favicon/icons/favicon_io/site.webmanifest">
+
+    <!-- Optional for Windows Tiles -->
+    <!-- <meta name="msapplication-config" content="/browserconfig.xml"> -->
+    <!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> 
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">TheKing</a>
+            <ul class="nav-links" id="navLinks">
+                <li></li>
+                <li class="mobile-close"><a href="#">✕ Close</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#web3">Web3</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- MOBILE HAMBURGER MENU -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero fade-up">
+        <div class="hero-content">
+            <h1>TheKing</h1>
+            <p class="hero-tagline">Web Developer, Project Manager & Web3 Enthusiast</p>
+            <div class="cta-buttons">
+                <a href="#portfolio" class="btn btn-primary">Explore Portfolio</a>
+                <a href="#web3" class="btn">View Web3 Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">About TheKing / Oba </h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Innovation in Web Development</h3>
+                <p>TheKing is a passionate web developer and project manager with a keen interest in managing web development projects and exploring the possibilities of Web3 technologies. With a strong background in web development, TheKing has been at the forefront of creating innovative solutions that bridge the gap between traditional web development and modern project management practices.</p>
+                <p>Our journey began with a simple belief: that the web should evolve with technology, not be replaced by it. Every project we manage tells a story of innovation, sustainability, and the endless possibilities when creativity meets code.</p>
+                <p>From managing decentralized applications (dApps) to overseeing smart contract development, we're redefining what it means to build the future of the web.</p>
+            </div>
+            <div class="about-image">
+                <img src="assets/theking/transparent/logo.png" alt="Web Development Innovation">
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section fade-up">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="project">Project Management</button>
+        </div>
+        <div class="portfolio-grid" id="portfolioGrid">
+            <div class="portfolio-item" data-category="web">
+                <img src="assets/img/icons/brands/php.svg" alt="Web Application">
+                <div class="portfolio-overlay">
+                    <h4>E-Commerce Platform</h4>
+                    <p>Full-stack e-commerce solution with PHP, Laravel, and JavaScript</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="project">
+                <img src="assets/img/icons/brands/node-js.svg" alt="Project Management">
+                <div class="portfolio-overlay">
+                    <h4>Decentralized Marketplace</h4>
+                    <p>Managed development of a blockchain-based marketplace using Node.js</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="web">
+                <img src="assets/img/icons/brands/php.svg" alt="Web Application">
+                <div class="portfolio-overlay">
+                    <h4>Content Management System</h4>
+                    <p>Custom CMS built with PHP, Laravel, and MySQL</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="project">
+                <img src="assets/img/icons/brands/node-js.svg" alt="Project Management">
+                <div class="portfolio-overlay">
+                    <h4>API Integration Project</h4>
+                    <p>Managed integration of third-party APIs using Node.js and JavaScript</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="web">
+                <img src="assets/img/icons/brands/html5.svg" alt="Web Application">
+                <div class="portfolio-overlay">
+                    <h4>Portfolio Website</h4>
+                    <p>Personal portfolio website with HTML, CSS, and JavaScript</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="project">
+                <img src="assets/img/icons/brands/node-js.svg" alt="Project Management">
+                <div class="portfolio-overlay">
+                    <h4>Smart Contract Audit</h4>
+                    <p>Managed security audit for smart contracts using Node.js</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Management Section -->
+    <section id="projects" class="section fade-up">
+        <h2 class="section-title">Project Management</h2>
+        <div class="project-management-content">
+            <div class="project-management-text">
+                <h3>Managing Web Development Projects</h3>
+                <p>With extensive experience in managing web development projects, TheKing has successfully overseen numerous projects from inception to completion. Our expertise in PHP, Laravel, HTML, CSS, JavaScript, and Node.js allows us to effectively manage projects that leverage these technologies.</p>
+                <p>We specialize in moderating development teams, ensuring that projects are delivered on time, within scope, and to the highest quality standards. Our approach combines technical expertise with strong project management skills to deliver exceptional results.</p>
+                <p>From initial planning to final deployment, we ensure that every project is executed flawlessly, meeting the needs and expectations of our clients.</p>
+            </div>
+            <div class="project-management-image">
+                <img src="assets/img/icons/solid/laptop-code.svg" alt="Project Management">
+            </div>
+        </div>
+    </section>
+
+    <!-- Web3 Section -->
+    <section id="web3" class="section fade-up">
+        <h2 class="section-title">Web3</h2>
+        <div class="web3-content">
+            <div class="web3-text">
+                <h3>Exploring the Future with Web3</h3>
+                <p>As a Web3 enthusiast, TheKing is actively involved in exploring and managing projects in the decentralized web space. With a focus on blockchain technology, smart contracts, and decentralized applications (dApps), we are committed to pushing the boundaries of what's possible in the digital world.</p>
+                <p>Our experience in Web3 technologies allows us to moderate and manage web development projects that are at the cutting edge of innovation. We are always looking for opportunities to collaborate on projects that leverage blockchain and decentralized technologies.</p>
+                <p>If you are looking for a moderator or manager for your Web3 projects, TheKing has the expertise and passion to help bring your vision to life.</p>
+            </div>
+            <div class="web3-image">
+                <img src="assets/img/icons/solid/coins.svg" alt="Web3 Innovation">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section fade-up">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <!-- Add this status message element inside your contact form -->
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mpwrapgg"  method="POST">
+                <!-- Existing form fields -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <!-- Status message container -->
+                <p id="formStatus" class="form-status"></p>
+            </form>
+            <div class="contact-info">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://t.me/thekingsoba" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://x.com/Thekingsmedias" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <!-- <a href="#" aria-label="LinkedIn"><i class="fab fa-facebook"></i></a> -->
+                    <!-- <a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a> -->
+                    <a href="mailto:thekingsmedia00@gmail.com" aria-label="Mail"><i class="fas fa-envelope"></i></a>
+                    <!-- <a href="tel:+2349066856504" aria-label="Phone"><i class="fas fa-phone"></i></a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 TheKing. All rights reserved. Web Developer, Project Manager & Web3 Enthusiast. <br> Made with <i class="fa fa-heart" style="color:red;"></i> By TheKing <i class="fa fa-crown" style="color:yellow;"></i> </p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- GSAP -->
+    <script src="assets/js/gsap/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
